@@ -1,3 +1,4 @@
+import Image from "next/image";
 import VenturePortfolio from "@/components/VenturePortfolio";
 import ContactModal from "@/components/ContactModal";
 
@@ -11,6 +12,20 @@ function HeroSection() {
 
       <div className="max-w-7xl mx-auto relative z-10 text-center flex flex-col items-center">
         
+        {/* Main 3D Brand Logo */}
+        <div className="mb-8 relative group">
+          <div className="absolute -inset-6 bg-gradient-to-r from-brand-cyan/25 via-brand-purple/25 to-brand-pink/25 rounded-3xl blur-2xl opacity-60 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+          <Image
+            src="/logo.png"
+            alt="Buy One Media Logo"
+            width={300}
+            height={309}
+            className="w-40 sm:w-52 md:w-64 h-auto object-contain relative drop-shadow-[0_20px_35px_rgba(0,0,0,0.6)] group-hover:scale-105 transition-transform duration-500"
+            priority
+            unoptimized
+          />
+        </div>
+
         {/* Top Eyebrow Tag */}
         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass mb-8 animate-fade-in text-xs sm:text-sm font-medium border border-white/10">
           <span className="w-2.5 h-2.5 rounded-full bg-brand-cyan animate-pulse" />

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Outfit } from "next/font/google";
+import Image from "next/image";
 import "./globals.css";
 
 const outfit = Outfit({
@@ -23,6 +24,10 @@ export const metadata: Metadata = {
     "Pay Stub Generator",
     "Calcudoku Books"
   ],
+  icons: {
+    icon: "/favicon.ico",
+    apple: "/logo.png",
+  },
   openGraph: {
     title: "Buy One Media LLC | Holdings & Technology Ecosystem",
     description: "Two decades of operational execution. Engineering intelligent SaaS, real-time voice AI, and bestselling literature.",
@@ -30,6 +35,14 @@ export const metadata: Metadata = {
     siteName: "Buy One Media LLC",
     locale: "en_US",
     type: "website",
+    images: [
+      {
+        url: "/logo.png",
+        width: 609,
+        height: 627,
+        alt: "Buy One Media",
+      },
+    ],
   }
 };
 
@@ -47,10 +60,16 @@ export default function RootLayout({
           <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
             
             {/* Logo Brand Mark */}
-            <a href="/" className="flex items-center gap-3 group">
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-blue via-brand-purple to-brand-pink flex items-center justify-center font-black text-white text-base shadow-[0_0_20px_rgba(41,121,255,0.3)] group-hover:scale-105 transition-transform duration-300">
-                B1
-              </div>
+            <a href="/" className="flex items-center gap-3.5 group">
+              <Image
+                src="/logo.png"
+                alt="Buy One Media"
+                width={52}
+                height={54}
+                className="h-12 w-auto object-contain drop-shadow-[0_0_15px_rgba(41,121,255,0.4)] group-hover:scale-105 transition-transform duration-300"
+                priority
+                unoptimized
+              />
               <div className="flex flex-col">
                 <span className="text-xl font-black tracking-tight leading-none text-white">
                   BuyOne<span className="text-gradient">Media</span>
@@ -102,9 +121,14 @@ export default function RootLayout({
               {/* Brand Summary */}
               <div className="md:col-span-2">
                 <div className="flex items-center gap-3 mb-4">
-                  <div className="w-8 h-8 rounded-lg bg-gradient-to-tr from-brand-blue via-brand-purple to-brand-pink flex items-center justify-center font-black text-white text-sm shadow-[0_0_15px_rgba(41,121,255,0.3)]">
-                    B1
-                  </div>
+                  <Image
+                    src="/logo.png"
+                    alt="Buy One Media"
+                    width={40}
+                    height={41}
+                    className="h-10 w-auto object-contain drop-shadow-[0_0_12px_rgba(41,121,255,0.35)]"
+                    unoptimized
+                  />
                   <span className="text-lg font-black text-white">BuyOne<span className="text-gradient">Media</span> LLC</span>
                 </div>
                 <p className="text-zinc-400 text-sm leading-relaxed max-w-sm mb-6">
